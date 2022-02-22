@@ -84,9 +84,13 @@ affinity: {}
 
 livenessProbe:
   initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
 
 readinessProbe:
   initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
 
 auth:
   database: "database"
