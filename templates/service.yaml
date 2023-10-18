@@ -11,5 +11,9 @@ spec:
       targetPort: {{ .Values.service.targetPort }}
       protocol: TCP
       name: http
+    - port: {{ .Values.service.port }}0
+      targetPort: {{ .Values.service.targetPort }}0
+      protocol: TCP
+      name: http
   selector:
     {{- include "mysql.selectorLabels" . | nindent 4 }}
