@@ -10,10 +10,10 @@ spec:
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.targetPort }}
       protocol: TCP
-      name: http
+      name: {{ include "mysql.fullname" . }}-port
     - port: {{ .Values.service.port }}0
       targetPort: {{ .Values.service.targetPort }}0
       protocol: TCP
-      name: http
+      name: {{ include "mysql.fullname" . }}-port-alt
   selector:
     {{- include "mysql.selectorLabels" . | nindent 4 }}
