@@ -52,7 +52,8 @@ spec:
             timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          args: [ "--default_authentication_plugin=caching_sha2_password" ]
+          # args: [ "--default_authentication_plugin=caching_sha2_password" ]
+          args: [ "--default_authentication_plugin=mysql_native_password" ]
           env:
             - name: MYSQL_RANDOM_ROOT_PASSWORD
               value: "yes"
